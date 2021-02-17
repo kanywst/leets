@@ -3,15 +3,16 @@ def shortestToChar(s,c):
     for i, letter in enumerate(s):
         if letter == c:
             index_nums.append(i)
-    ans = []
-    l  = len(s)
-    l2 = len(index_nums)
-    d=[None]*l2
-    for j in range(l):
-        for k in range(l2):
-            d[k] = abs(j-index_nums[k])
-        ans.append(min(d))
-    return ans
+    result = []
+    for i in range(len(s)):
+        d = []
+        for j in index_nums:
+            d.append(abs(i-j))
+        else:
+            result.append(min(d))
+    return result
+
+
 
 
 def main():
