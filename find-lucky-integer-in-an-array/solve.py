@@ -2,15 +2,11 @@ from collections import Counter
 
 def findLucky(arr):
     a = Counter(arr)
-    result = []
+    result = -1
     for i,j in a.items():
         if i == j:
-            result.append(i)
-    if result == []:
-        ans = -1
-    else:
-        ans = max(result)
-    return ans
+            result = max(result,i)
+    return result
 
 def main():
     arr = list(map(int,input().split(' ')))
