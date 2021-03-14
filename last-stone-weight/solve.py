@@ -7,10 +7,7 @@ def lastStoneWeight(stones):
             stones = list(reversed(sorted(stones[2:] + [diff])))
         else:
             stones = list(reversed(sorted(stones[2:])))
-    if stones != []:
-        return stones[0]
-    else:
-        return 0
+    return stones[0] if stones else 0
 
 def main():
     stones = [2,2]
