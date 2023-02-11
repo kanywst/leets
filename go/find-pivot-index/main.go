@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{1, 7, 3, 6, 5, 6}
+	nums := []int{-1, -1, 0, 0, -1, -1}
 	fmt.Println(pivotIndex((nums)))
 
 }
@@ -21,6 +21,7 @@ func pivotIndex(nums []int) (answer int) {
 		leftSum += nums[i]
 		if leftSum-nums[i] == sum-leftSum {
 			answer = i
+			break
 		}
 	}
 	return
