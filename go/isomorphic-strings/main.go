@@ -10,20 +10,15 @@ func main() {
 }
 
 func isIsomorphic(s string, t string) bool {
-	m := make(map[string]string)
-	memo := make(map[string]string)
+	m1 := make([]int, 256)
+	m2 := make([]int, 256)
+
 	for i := 0; i < len(s); i++ {
-		if val, ok := m[string(s[i])]; ok {
-			fmt.Println(m)
-			if val != string(t[i]) {
-				return false
-			}
-		} else if _, ok := memo[string(t[i])]; ok {
+		if m1[int(s[i])] != m2[int(t[i])] {
 			return false
-		} else {
-			m[string(s[i])] = string(t[i])
-			memo[string(t[i])] = ""
 		}
+		m1[int(s[i])] = i
+		m2[int(t[i])] = i
 	}
 	return true
 }
