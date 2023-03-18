@@ -10,15 +10,6 @@ func main() {
 	fmt.Println(longestPalindrome((s)))
 }
 
-// func checkPalindrome(s string) bool {
-// 	t := strings.Split(s, "")
-// 	sort.Slice(t, func(i, j int) bool {
-// 		return i < j
-// 	})
-// 	fmt.Println(s, strings.Join(t, ""))
-// 	return s == strings.Join(t, "")
-// }
-
 func IsPalindrome(s string) bool {
 	l := len(s)
 	for i, runeValue := range s {
