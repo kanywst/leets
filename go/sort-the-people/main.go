@@ -12,7 +12,6 @@ func main() {
 
 func sortPeople(names []string, heights []int) (ans []string) {
 	m := make(map[int]string)
-	// ans := make([]string, len(names))
 	for i, j := range names {
 		m[heights[i]] = j
 	}
