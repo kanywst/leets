@@ -7,25 +7,29 @@ func main() {
 	fmt.Println(intersect(nums1, nums2))
 }
 
-func intersect(nums1 []int, nums2 []int) (ans []int) {
-	m1, m2 := make(map[int]int), make(map[int]int)
+func makeMapInt(nums1 []int) map[int]int {
+	m1 := make(map[int]int)
 	for _, i := range nums1 {
 		m1[i] += 1
 	}
-	for _, i := range nums2 {
-		m2[i] += 1
+	return m1
+}
+
+func appendAns(ans []int, k int, v int) []int {
+	for i := 0; i < v; i++ {
+		ans = append(ans, k)
 	}
+	return ans
+}
+
+func intersect(nums1 []int, nums2 []int) (ans []int) {
+	m1, m2 := makeMapInt(nums1), makeMapInt(nums2)
 	for k, v := range m1 {
 		if v <= m2[k] {
-			for i := 0; i < v; i++ {
-				ans = append(ans, k)
-			}
+			ans = appendAns(ans, k, v)
+			continue
 		}
-		if v > m2[k] {
-			for i := 0; i < m2[k]; i++ {
-				ans = append(ans, k)
-			}
-		}
+		ans = appendAns(ans, k, m2[k])
 	}
 	return
 }
