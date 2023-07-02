@@ -1,3 +1,3 @@
 # Leetcode
 
-https://leetcode.com/tekashi/
+[leetcode/tekashi](https://leetcode.com/tekashi/)
